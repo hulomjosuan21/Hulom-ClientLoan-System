@@ -1,6 +1,6 @@
 ﻿namespace Hulom_ClientLoan_System.Forms.PopUpForms
 {
-    partial class AddEditClientForm
+    partial class AddClient
     {
         /// <summary>
         /// Required designer variable.
@@ -202,7 +202,6 @@
             this.Button.TabIndex = 16;
             this.Button.Text = "Add";
             this.Button.UseVisualStyleBackColor = true;
-            this.Button.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // AddEditClientForm
             // 

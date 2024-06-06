@@ -2,6 +2,7 @@
 using Hulom_ClientLoan_System.Handlers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using static System.Diagnostics.Debug;
 namespace Hulom_ClientLoan_System.Forms.PopUpForms
@@ -125,8 +126,6 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
                             break;
                     }
 
-                    WriteLine($"{LoanHandler.GenerateNewLoanID} : {getSelectedClientID} : {total_payable / numPayment} : {release} : {ListOfLoanStatus.Ongoing}");
-
                     temp.LoanID = LoanHandler.GenerateNewLoanID;
                     temp.ClientID = getSelectedClientID;
                     temp.Collectables = total_payable / numPayment;
@@ -152,6 +151,12 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
                 GetAddedLoan.TotalPayable = total_payable;
                 GetAddedLoan.DueDate = due_date;
                 GetAddedLoan.Status = ListOfLoanStatus.Ongoing.ToString();
+                using (hulomclientloandbEntities _con = new hulomclientloandbEntities())
+                {
+                    Client c = _con.Clients.FirstOrDefault(id => id.ID == getSelectedClientID);
+                    c.ActiveLoan++;
+                    _con.SaveChanges();
+                }
 
                 DialogResult = DialogResult.OK;
             }

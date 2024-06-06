@@ -165,6 +165,7 @@ namespace Hulom_ClientLoan_System.Forms
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Aside.ResumeLayout(false);
             this.Aside.PerformLayout();
             this.panel1.ResumeLayout(false);

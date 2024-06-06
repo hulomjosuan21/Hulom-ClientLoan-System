@@ -16,6 +16,10 @@ namespace Hulom_ClientLoan_System.Forms
         {
             InitializeComponent();
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+        }
 
         private void HomeButton_Click(object sender, EventArgs e)
         {
@@ -29,7 +33,8 @@ namespace Hulom_ClientLoan_System.Forms
 
         private void PaymentButton_Click(object sender, EventArgs e)
         {
-
+            LoadForm(new PaymentForm());
         }
+
     }
 }

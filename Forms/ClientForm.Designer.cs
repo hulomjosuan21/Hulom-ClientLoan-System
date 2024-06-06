@@ -42,6 +42,7 @@
             this.activeLoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SearchInput = new System.Windows.Forms.TextBox();
             this.AddButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.EditButton = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.SearchInput = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ClientTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -154,6 +154,7 @@
             this.savingsDataGridViewTextBoxColumn.HeaderText = "Saving";
             this.savingsDataGridViewTextBoxColumn.Name = "savingsDataGridViewTextBoxColumn";
             this.savingsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.savingsDataGridViewTextBoxColumn.Visible = false;
             // 
             // activeLoanDataGridViewTextBoxColumn
             // 
@@ -181,6 +182,16 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(8);
             this.panel1.Size = new System.Drawing.Size(819, 48);
             this.panel1.TabIndex = 1;
+            // 
+            // SearchInput
+            // 
+            this.SearchInput.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SearchInput.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchInput.Location = new System.Drawing.Point(60, 8);
+            this.SearchInput.Name = "SearchInput";
+            this.SearchInput.Size = new System.Drawing.Size(201, 27);
+            this.SearchInput.TabIndex = 5;
+            this.SearchInput.TextChanged += new System.EventHandler(this.SearchInput_TextChanged);
             // 
             // AddButton
             // 
@@ -264,16 +275,6 @@
             this.panel3.Size = new System.Drawing.Size(819, 496);
             this.panel3.TabIndex = 3;
             // 
-            // SearchInput
-            // 
-            this.SearchInput.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SearchInput.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchInput.Location = new System.Drawing.Point(60, 8);
-            this.SearchInput.Name = "SearchInput";
-            this.SearchInput.Size = new System.Drawing.Size(201, 27);
-            this.SearchInput.TabIndex = 5;
-            this.SearchInput.TextChanged += new System.EventHandler(this.SearchInput_TextChanged);
-            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,6 +309,7 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button ViewLoanButton;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.TextBox SearchInput;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
@@ -318,6 +320,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn savingsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn activeLoanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox SearchInput;
     }
 }

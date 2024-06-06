@@ -32,13 +32,13 @@
             this.ClientIDLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ScheduleTable = new System.Windows.Forms.DataGridView();
-            this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loanIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.collectablesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScheduleTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).BeginInit();
@@ -51,7 +51,7 @@
             this.ClientIDLabel.Location = new System.Drawing.Point(0, 0);
             this.ClientIDLabel.Name = "ClientIDLabel";
             this.ClientIDLabel.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.ClientIDLabel.Size = new System.Drawing.Size(644, 36);
+            this.ClientIDLabel.Size = new System.Drawing.Size(484, 36);
             this.ClientIDLabel.TabIndex = 1;
             this.ClientIDLabel.Text = "Loan Schedules";
             this.ClientIDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -63,7 +63,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 36);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(8);
-            this.panel1.Size = new System.Drawing.Size(644, 360);
+            this.panel1.Size = new System.Drawing.Size(484, 525);
             this.panel1.TabIndex = 2;
             // 
             // ScheduleTable
@@ -85,12 +85,8 @@
             this.ScheduleTable.Location = new System.Drawing.Point(8, 8);
             this.ScheduleTable.Name = "ScheduleTable";
             this.ScheduleTable.ReadOnly = true;
-            this.ScheduleTable.Size = new System.Drawing.Size(628, 344);
+            this.ScheduleTable.Size = new System.Drawing.Size(468, 509);
             this.ScheduleTable.TabIndex = 0;
-            // 
-            // scheduleBindingSource
-            // 
-            this.scheduleBindingSource.DataSource = typeof(Hulom_ClientLoan_System.Entities.Schedule);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -137,18 +133,22 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // scheduleBindingSource
+            // 
+            this.scheduleBindingSource.DataSource = typeof(Hulom_ClientLoan_System.Entities.Schedule);
+            // 
             // ScheduleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 396);
+            this.ClientSize = new System.Drawing.Size(484, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ClientIDLabel);
             this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(660, 435);
+            this.MinimumSize = new System.Drawing.Size(500, 600);
             this.Name = "ScheduleForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

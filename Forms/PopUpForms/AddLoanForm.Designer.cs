@@ -41,7 +41,6 @@
             this.OtherFeesInput = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ReceiptLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,7 +151,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.ReceiptLabel);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(340, 0);
             this.panel1.Name = "panel1";
@@ -164,21 +162,11 @@
             // 
             this.ReceiptLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReceiptLabel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReceiptLabel.Location = new System.Drawing.Point(8, 53);
+            this.ReceiptLabel.Location = new System.Drawing.Point(8, 8);
             this.ReceiptLabel.Name = "ReceiptLabel";
             this.ReceiptLabel.Padding = new System.Windows.Forms.Padding(24);
-            this.ReceiptLabel.Size = new System.Drawing.Size(302, 271);
+            this.ReceiptLabel.Size = new System.Drawing.Size(302, 316);
             this.ReceiptLabel.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Location = new System.Drawing.Point(8, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(302, 45);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "------------------------------------\r\nLoan\r\n------------------------------------";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AddLoanForm
             // 
@@ -228,7 +216,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox OtherFeesInput;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label ReceiptLabel;
     }
 }

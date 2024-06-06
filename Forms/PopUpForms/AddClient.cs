@@ -5,29 +5,35 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Diagnostics.Debug;
 
 namespace Hulom_ClientLoan_System.Forms.PopUpForms
 {
-    public partial class AddEditClientForm : Form
+    public partial class AddClient : Form
     {
-        private Client tempClient;
-        private bool editMode = false;
-        public AddEditClientForm()
+        private readonly Client tempClient;
+        public AddClient()
         {
             InitializeComponent();
             Text = "Add Client";
+            Button.Text = "Add";
+            Button.Click += new EventHandler(AddButton_Click);
         }
 
-        public AddEditClientForm(int getSelectedClientID, Client getClient) : this()
+        private readonly int getSelectedClientID;
+        private readonly (decimal _Savings, int _NumLoans) GetCurrentClientSavingAndNumLoan;
+        public AddClient(int getSelectedClientID, Client getClient)
         {
+            InitializeComponent();
             Text = "Edit Client";
+            Button.Text = "Save Changes";
             tempClient = getClient;
-            editMode = true;
             FnameInput.Text = getClient.Firstname;
             LnameInput.Text = getClient.Lastname;
             BdayInput.Value = getClient.Birthdate;
@@ -41,7 +47,10 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
             AddressInput.Text = getClient.Address;
             EmailInput.Text = getClient.Email;
             ContactNumInput.Text = getClient.PhoneNumber;
-
+            GetCurrentClientSavingAndNumLoan._Savings = getClient.Savings;
+            GetCurrentClientSavingAndNumLoan._NumLoans = getClient.ActiveLoan;
+            this.getSelectedClientID = getSelectedClientID;
+            Button.Click += new EventHandler(EditButton_Click);
         }
 
         private void AddEditClientForm_HelpButtonClicked(object sender, CancelEventArgs e)
@@ -49,53 +58,99 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
             
         }
 
-        public Client GetAddedClient { get; set; } = new Client();
-
+        public Client GetAddedOrEditedClient { get; set; } = new Client();
         private void AddButton_Click(object sender, EventArgs e)
         {
             string fname = FnameInput.Text.Trim();
             string lname = LnameInput.Text.Trim();
             DateTime bday = BdayInput.Value;
-
-            string gender = string.Empty;
-            bool[] getGender = { GenderMInput.Checked, GenderFInput.Checked };
-            if (getGender[0])
-            {
-                gender = "Male";
-            }
-            if (getGender[1])
-            {
-                gender = "Female";
-            }
-
             string address = AddressInput.Text.Trim();
             string email = EmailInput.Text.Trim();
             string num = ContactNumInput.Text.Trim();
 
-            GetAddedClient.Firstname = fname;
-            GetAddedClient.Lastname = lname;
-            GetAddedClient.Birthdate = bday;
-            GetAddedClient.Gender = gender;
-            GetAddedClient.Address = address;
-            GetAddedClient.Email = email;
-            GetAddedClient.PhoneNumber = num;
-            GetAddedClient.Savings = 0;
-            GetAddedClient.ActiveLoan = 0;
-
-            if (editMode)
+            if (string.IsNullOrEmpty(fname) ||
+                string.IsNullOrEmpty(lname) ||
+                string.IsNullOrEmpty(address) ||
+                string.IsNullOrEmpty(email) ||
+                string.IsNullOrEmpty(num))
             {
-                if (tempClient == GetAddedClient)
-                {
-                    MessageBox.Show("No Changes");
-                    DialogResult = DialogResult.Cancel;
-                    Dispose();
-                }
+                MessageBox.Show("Please fill in all the required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string gender = string.Empty;
+            if (GenderMInput.Checked)
+            {
+                gender = "Male";
+            }
+            else if (GenderFInput.Checked)
+            {
+                gender = "Female";
             }
             else
             {
-                DialogResult = DialogResult.OK;
-                Dispose();
+                MessageBox.Show("Please select a gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            GetAddedOrEditedClient.Firstname = fname;
+            GetAddedOrEditedClient.Lastname = lname;
+            GetAddedOrEditedClient.Birthdate = bday;
+            GetAddedOrEditedClient.Gender = gender;
+            GetAddedOrEditedClient.Address = address;
+            GetAddedOrEditedClient.Email = email;
+            GetAddedOrEditedClient.PhoneNumber = num;
+            GetAddedOrEditedClient.Savings = 0;
+            GetAddedOrEditedClient.ActiveLoan = 0;
+
+            DialogResult = DialogResult.OK;
+            Dispose();
+        }
+
+        private void EditButton_Click(object sender, EventArgs e) {
+            string fname = FnameInput.Text.Trim();
+            string lname = LnameInput.Text.Trim();
+            DateTime bday = BdayInput.Value;
+            string address = AddressInput.Text.Trim();
+            string email = EmailInput.Text.Trim();
+            string num = ContactNumInput.Text.Trim();
+
+            if (string.IsNullOrEmpty(fname) ||
+                string.IsNullOrEmpty(lname) ||
+                string.IsNullOrEmpty(address) ||
+                string.IsNullOrEmpty(email) ||
+                string.IsNullOrEmpty(num))
+            {
+                MessageBox.Show("Please fill in all the required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string gender = string.Empty;
+            if (GenderMInput.Checked)
+            {
+                gender = "Male";
+            }
+            else if (GenderFInput.Checked)
+            {
+                gender = "Female";
+            }
+            else
+            {
+                MessageBox.Show("Please select a gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            GetAddedOrEditedClient.Firstname = fname;
+            GetAddedOrEditedClient.Lastname = lname;
+            GetAddedOrEditedClient.Birthdate = bday;
+            GetAddedOrEditedClient.Gender = gender;
+            GetAddedOrEditedClient.Address = address;
+            GetAddedOrEditedClient.Email = email;
+            GetAddedOrEditedClient.PhoneNumber = num;
+            GetAddedOrEditedClient.Savings = GetCurrentClientSavingAndNumLoan._Savings;
+            GetAddedOrEditedClient.ActiveLoan = GetCurrentClientSavingAndNumLoan._NumLoans;
+            DialogResult = DialogResult.OK;
+            Dispose();
         }
 
         private void EmailInput_Validating(object sender, CancelEventArgs e)
