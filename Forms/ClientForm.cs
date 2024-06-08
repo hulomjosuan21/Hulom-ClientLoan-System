@@ -125,7 +125,7 @@ namespace Hulom_ClientLoan_System.Forms
                 using (hulomclientloandbEntities _con = new hulomclientloandbEntities())
                 {
                     Client temp = _con.Clients.FirstOrDefault(id => id.ID == getSelectedClientID);
-                    string showVal = $"Name: {temp.Firstname} {temp.Lastname}\nAddress: {temp.Address}\nBirthdate: {temp.Birthdate.ToString("MMM-dd-yyyyy")}\nGender: {temp.Gender}\nPhone Number: {temp.PhoneNumber}\nEmail Address: {temp.Email}";
+                    string showVal = $"Name: {temp.Firstname} {temp.Lastname}\nAddress: {temp.Address}\nBirthdate: {temp.Birthdate.ToString("MMM-dd-yyyyy")}\nAge: {ClientForm.CalculateAge(temp.Birthdate)}\nGender: {temp.Gender}\nPhone Number: {temp.PhoneNumber}\nEmail Address: {temp.Email}";
                     MessageBox.Show(showVal, "Member Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _con.Dispose();
                 }

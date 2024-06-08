@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ClientIDLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ScheduleTable = new System.Windows.Forms.DataGridView();
@@ -72,6 +74,7 @@
             this.ScheduleTable.AllowUserToDeleteRows = false;
             this.ScheduleTable.AutoGenerateColumns = false;
             this.ScheduleTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ScheduleTable.BackgroundColor = System.Drawing.SystemColors.Control;
             this.ScheduleTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ScheduleTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -87,6 +90,7 @@
             this.ScheduleTable.ReadOnly = true;
             this.ScheduleTable.Size = new System.Drawing.Size(468, 509);
             this.ScheduleTable.TabIndex = 0;
+            this.ScheduleTable.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ScheduleTable_CellFormatting);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -122,6 +126,9 @@
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            dataGridViewCellStyle1.Format = "MM-dd-yyyy";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -129,6 +136,9 @@
             // statusDataGridViewTextBoxColumn
             // 
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;

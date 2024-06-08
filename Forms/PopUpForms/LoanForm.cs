@@ -60,5 +60,34 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
                 _scheduleHandler.AddSchedule(a.GetAddedSchedules);
             }
         }
+
+        private void LoanTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 11 && e.RowIndex >= 0)
+            {
+
+                string cellValue = LoanTable.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+                Color ongoingColor = Color.FromArgb(56, 146, 227);
+                Color paidColor = Color.FromArgb(121, 207, 24);
+                Color penalizedColor = Color.FromArgb(210, 0, 12);
+
+                switch (cellValue)
+                {
+                    case "Ongoing":
+                        e.CellStyle.BackColor = ongoingColor;
+                        break;
+                    case "Paid":
+                        e.CellStyle.BackColor = paidColor;
+                        break;
+                    case "Penalized":
+                        e.CellStyle.BackColor = penalizedColor;
+                        break;
+                    default:
+                        e.CellStyle.BackColor = LoanTable.DefaultCellStyle.BackColor;
+                        break;
+                }
+            }
+        }
     }
 }

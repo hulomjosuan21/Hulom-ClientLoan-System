@@ -93,6 +93,12 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
                 return;
             }
 
+            if (ClientForm.CalculateAge(bday) < 18)
+            {
+                MessageBox.Show("Invalid Gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             GetAddedOrEditedClient.Firstname = fname;
             GetAddedOrEditedClient.Lastname = lname;
             GetAddedOrEditedClient.Birthdate = bday;
@@ -137,6 +143,12 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
             else
             {
                 MessageBox.Show("Please select a gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (ClientForm.CalculateAge(bday) < 18)
+            {
+                MessageBox.Show("Invalid Gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

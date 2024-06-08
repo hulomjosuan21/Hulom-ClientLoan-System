@@ -62,6 +62,7 @@
             this.ClientTable.AllowUserToDeleteRows = false;
             this.ClientTable.AutoGenerateColumns = false;
             this.ClientTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ClientTable.BackgroundColor = System.Drawing.SystemColors.Control;
             this.ClientTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClientTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,

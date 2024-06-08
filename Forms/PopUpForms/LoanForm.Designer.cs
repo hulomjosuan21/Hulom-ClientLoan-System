@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ClientIDLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,7 +40,6 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ViewScheduleButton = new System.Windows.Forms.Button();
-            this.loanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loanIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loanAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +52,7 @@
             this.totalPayableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanTable)).BeginInit();
@@ -106,6 +107,7 @@
             this.LoanTable.AllowUserToDeleteRows = false;
             this.LoanTable.AutoGenerateColumns = false;
             this.LoanTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.LoanTable.BackgroundColor = System.Drawing.SystemColors.Control;
             this.LoanTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LoanTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.loanIDDataGridViewTextBoxColumn,
@@ -128,6 +130,7 @@
             this.LoanTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.LoanTable.Size = new System.Drawing.Size(820, 328);
             this.LoanTable.TabIndex = 1;
+            this.LoanTable.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.LoanTable_CellFormatting);
             this.LoanTable.SelectionChanged += new System.EventHandler(this.LoanTable_SelectionChanged);
             // 
             // panel4
@@ -179,10 +182,6 @@
             this.ViewScheduleButton.Text = "View Schedule";
             this.ViewScheduleButton.UseVisualStyleBackColor = true;
             this.ViewScheduleButton.Click += new System.EventHandler(this.ViewScheduleButton_Click);
-            // 
-            // loanBindingSource
-            // 
-            this.loanBindingSource.DataSource = typeof(Hulom_ClientLoan_System.Entities.Loan);
             // 
             // loanIDDataGridViewTextBoxColumn
             // 
@@ -273,10 +272,16 @@
             // statusDataGridViewTextBoxColumn
             // 
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // loanBindingSource
+            // 
+            this.loanBindingSource.DataSource = typeof(Hulom_ClientLoan_System.Entities.Loan);
             // 
             // LoanForm
             // 
