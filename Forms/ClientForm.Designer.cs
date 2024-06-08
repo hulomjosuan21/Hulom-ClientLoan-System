@@ -155,7 +155,6 @@
             this.savingsDataGridViewTextBoxColumn.HeaderText = "Saving";
             this.savingsDataGridViewTextBoxColumn.Name = "savingsDataGridViewTextBoxColumn";
             this.savingsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.savingsDataGridViewTextBoxColumn.Visible = false;
             // 
             // activeLoanDataGridViewTextBoxColumn
             // 
