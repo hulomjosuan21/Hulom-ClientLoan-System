@@ -25,7 +25,7 @@ namespace Hulom_ClientLoan_System.Forms
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            AddClient ae = new AddClient();
+            AddEditClient ae = new AddEditClient();
             if (ae.ShowDialog() == DialogResult.OK)
             {
                 using (hulomclientloandbEntities _con = new hulomclientloandbEntities())
@@ -42,7 +42,7 @@ namespace Hulom_ClientLoan_System.Forms
         {
             using (hulomclientloandbEntities _con = new hulomclientloandbEntities())
             {
-                AddClient ae = new AddClient(getSelectedClientID, _con.Clients.FirstOrDefault(id => id.ID == getSelectedClientID));
+                AddEditClient ae = new AddEditClient(getSelectedClientID, _con.Clients.FirstOrDefault(id => id.ID == getSelectedClientID));
                 if (ae.ShowDialog() == DialogResult.OK)
                 {
                     Client c = _con.Clients.FirstOrDefault(id => id.ID == getSelectedClientID);

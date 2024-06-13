@@ -77,8 +77,8 @@ namespace Hulom_ClientLoan_System.Handlers
         }
 
         public static decimal InterestedAmount(decimal loanAmount, decimal interest) => (loanAmount * interest) / 100;
-        public static decimal ReceivableAmount(decimal loanAmount, decimal interestedAmount) => (loanAmount + interestedAmount);
-        public static decimal TotalPayable(decimal loanAmount, decimal interestedAmount, decimal deduction) => (loanAmount + interestedAmount) - deduction;
+        public static decimal ReceivableAmount(decimal loanAmount, decimal interestedAmount, decimal deduction) => ((loanAmount + interestedAmount) - deduction);
+        public static decimal TotalPayable(decimal loanAmount, decimal interestedAmount) => (loanAmount + interestedAmount);
     }
 
     public enum ListOfPaymentTerm

@@ -15,10 +15,10 @@ using static System.Diagnostics.Debug;
 
 namespace Hulom_ClientLoan_System.Forms.PopUpForms
 {
-    public partial class AddClient : Form
+    public partial class AddEditClient : Form
     {
         private readonly Client tempClient;
-        public AddClient()
+        public AddEditClient()
         {
             InitializeComponent();
             Text = "Add Client";
@@ -28,7 +28,7 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
 
         private readonly int getSelectedClientID;
         private readonly (decimal _Savings, int _NumLoans) GetCurrentClientSavingAndNumLoan;
-        public AddClient(int getSelectedClientID, Client getClient)
+        public AddEditClient(int getSelectedClientID, Client getClient)
         {
             InitializeComponent();
             Text = "Edit Client";

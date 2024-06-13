@@ -9,7 +9,7 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
 {
     public partial class AddLoanForm : Form
     {
-        private int getSelectedClientID;
+        private readonly int getSelectedClientID;
         public AddLoanForm(int getSelectedClientID)
         {
             InitializeComponent();
@@ -45,8 +45,8 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
             _ = decimal.TryParse(OtherFeesInput.Text, out decimal deduction);
 
             decimal interest_amount = LoanUtilies.InterestedAmount(loanAmt, interest);
-            decimal receivable_amount = LoanUtilies.ReceivableAmount(loanAmt, interest_amount);
-            decimal total_payable = LoanUtilies.TotalPayable(loanAmt, interest_amount, deduction);
+            decimal receivable_amount = LoanUtilies.ReceivableAmount(loanAmt, interest_amount, deduction);
+            decimal total_payable = LoanUtilies.TotalPayable(loanAmt, interest_amount);
             DateTime due_date = LoanUtilies.GetDueDate(term, numPayment);
 
             string receiptText = $"Capital: {loanAmt.ToString("F2")}\nInterest: {interest.ToString("F1")}%\nPayment Term: {term}\nNo. of Payment: {numPayment}\nOther Fees: {deduction}\n\nInterest Amount: {interest_amount}\nReceivable Amount: {receivable_amount}\nTotal Payable: {total_payable}\nDuedate: {due_date.ToString("MM-dd-yyyy")}";
@@ -94,8 +94,8 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
                 ListOfPaymentTerm term = (ListOfPaymentTerm)PaymentTermInput.SelectedItem;
 
                 decimal interest_amount = LoanUtilies.InterestedAmount(loanAmt, interest);
-                decimal receivable_amount = LoanUtilies.ReceivableAmount(loanAmt, interest_amount);
-                decimal total_payable = LoanUtilies.TotalPayable(loanAmt, interest_amount, deduction);
+                decimal receivable_amount = LoanUtilies.ReceivableAmount(loanAmt, interest_amount, deduction);
+                decimal total_payable = LoanUtilies.TotalPayable(loanAmt, interest_amount);
 
                 DateTime release = DateTime.Now;
                 DateTime due_date = release;
@@ -151,6 +151,7 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
                 GetAddedLoan.TotalPayable = total_payable;
                 GetAddedLoan.DueDate = due_date;
                 GetAddedLoan.Status = ListOfLoanStatus.Ongoing.ToString();
+
                 using (hulomclientloandbEntities _con = new hulomclientloandbEntities())
                 {
                     Client c = _con.Clients.FirstOrDefault(id => id.ID == getSelectedClientID);

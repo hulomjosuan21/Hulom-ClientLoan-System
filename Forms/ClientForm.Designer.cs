@@ -30,16 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ClientTable = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.savingsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activeLoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.SearchInput = new System.Windows.Forms.TextBox();
@@ -50,6 +40,16 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.savingsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activeLoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ClientTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -86,82 +86,6 @@
             this.ClientTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientTable_CellClick);
             this.ClientTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientTable_CellDoubleClick);
             this.ClientTable.SelectionChanged += new System.EventHandler(this.ClientTable_SelectionChanged);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // firstnameDataGridViewTextBoxColumn
-            // 
-            this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "Firstname";
-            this.firstnameDataGridViewTextBoxColumn.HeaderText = "Firstname";
-            this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
-            this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastnameDataGridViewTextBoxColumn
-            // 
-            this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "Lastname";
-            this.lastnameDataGridViewTextBoxColumn.HeaderText = "Lastname";
-            this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
-            this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // birthdateDataGridViewTextBoxColumn
-            // 
-            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "Birthdate";
-            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Birthdate";
-            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
-            this.birthdateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.birthdateDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // genderDataGridViewTextBoxColumn
-            // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
-            this.genderDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneNumberDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // savingsDataGridViewTextBoxColumn
-            // 
-            this.savingsDataGridViewTextBoxColumn.DataPropertyName = "Savings";
-            this.savingsDataGridViewTextBoxColumn.HeaderText = "Saving";
-            this.savingsDataGridViewTextBoxColumn.Name = "savingsDataGridViewTextBoxColumn";
-            this.savingsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // activeLoanDataGridViewTextBoxColumn
-            // 
-            this.activeLoanDataGridViewTextBoxColumn.DataPropertyName = "ActiveLoan";
-            this.activeLoanDataGridViewTextBoxColumn.HeaderText = "Active Loan";
-            this.activeLoanDataGridViewTextBoxColumn.Name = "activeLoanDataGridViewTextBoxColumn";
-            this.activeLoanDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // clientBindingSource
             // 
@@ -274,6 +198,83 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(8);
             this.panel3.Size = new System.Drawing.Size(819, 496);
             this.panel3.TabIndex = 3;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // firstnameDataGridViewTextBoxColumn
+            // 
+            this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "Firstname";
+            this.firstnameDataGridViewTextBoxColumn.HeaderText = "Firstname";
+            this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastnameDataGridViewTextBoxColumn
+            // 
+            this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "Lastname";
+            this.lastnameDataGridViewTextBoxColumn.HeaderText = "Lastname";
+            this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // birthdateDataGridViewTextBoxColumn
+            // 
+            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "Birthdate";
+            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Birthdate";
+            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
+            this.birthdateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.birthdateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+            this.genderDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneNumberDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // savingsDataGridViewTextBoxColumn
+            // 
+            this.savingsDataGridViewTextBoxColumn.DataPropertyName = "Savings";
+            this.savingsDataGridViewTextBoxColumn.HeaderText = "Saving";
+            this.savingsDataGridViewTextBoxColumn.Name = "savingsDataGridViewTextBoxColumn";
+            this.savingsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.savingsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // activeLoanDataGridViewTextBoxColumn
+            // 
+            this.activeLoanDataGridViewTextBoxColumn.DataPropertyName = "ActiveLoan";
+            this.activeLoanDataGridViewTextBoxColumn.HeaderText = "Active Loan";
+            this.activeLoanDataGridViewTextBoxColumn.Name = "activeLoanDataGridViewTextBoxColumn";
+            this.activeLoanDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ClientForm
             // 

@@ -36,6 +36,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.LoanTable = new System.Windows.Forms.DataGridView();
+            this.loanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.AddButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,12 +53,11 @@
             this.totalPayableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanTable)).BeginInit();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loanBindingSource)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -132,6 +132,10 @@
             this.LoanTable.TabIndex = 1;
             this.LoanTable.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.LoanTable_CellFormatting);
             this.LoanTable.SelectionChanged += new System.EventHandler(this.LoanTable_SelectionChanged);
+            // 
+            // loanBindingSource
+            // 
+            this.loanBindingSource.DataSource = typeof(Hulom_ClientLoan_System.Entities.Loan);
             // 
             // panel4
             // 
@@ -279,10 +283,6 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // loanBindingSource
-            // 
-            this.loanBindingSource.DataSource = typeof(Hulom_ClientLoan_System.Entities.Loan);
-            // 
             // LoanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,9 +304,9 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LoanTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loanBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loanBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

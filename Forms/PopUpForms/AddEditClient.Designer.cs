@@ -1,6 +1,6 @@
 ﻿namespace Hulom_ClientLoan_System.Forms.PopUpForms
 {
-    partial class AddClient
+    partial class AddEditClient
     {
         /// <summary>
         /// Required designer variable.

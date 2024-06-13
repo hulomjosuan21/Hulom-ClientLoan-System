@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PayButton = new System.Windows.Forms.Button();
             this.TransactionInput = new System.Windows.Forms.TextBox();
@@ -37,6 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ListOfLoanSchedTable = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.ListOfLoanTable = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loanIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,8 +48,6 @@
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.ListOfLoanTable = new System.Windows.Forms.DataGridView();
             this.loanIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loanAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,13 +64,14 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListOfLoanSchedTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListOfLoanTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.PayButton);
             this.panel1.Controls.Add(this.TransactionInput);
             this.panel1.Controls.Add(this.label2);
@@ -90,6 +93,7 @@
             this.PayButton.TabIndex = 5;
             this.PayButton.Text = "Pay";
             this.PayButton.UseVisualStyleBackColor = true;
+            this.PayButton.Click += new System.EventHandler(this.PayButton_Click);
             // 
             // TransactionInput
             // 
@@ -146,6 +150,7 @@
             this.ListOfLoanSchedTable.AllowUserToDeleteRows = false;
             this.ListOfLoanSchedTable.AutoGenerateColumns = false;
             this.ListOfLoanSchedTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ListOfLoanSchedTable.BackgroundColor = System.Drawing.SystemColors.Control;
             this.ListOfLoanSchedTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListOfLoanSchedTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -164,9 +169,51 @@
             this.ListOfLoanSchedTable.TabIndex = 3;
             this.ListOfLoanSchedTable.SelectionChanged += new System.EventHandler(this.ListOfLoanSched_SelectionChanged);
             // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(8, 254);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(474, 22);
+            this.panel3.TabIndex = 2;
+            // 
+            // ListOfLoanTable
+            // 
+            this.ListOfLoanTable.AllowUserToAddRows = false;
+            this.ListOfLoanTable.AllowUserToDeleteRows = false;
+            this.ListOfLoanTable.AutoGenerateColumns = false;
+            this.ListOfLoanTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ListOfLoanTable.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.ListOfLoanTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListOfLoanTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.loanIDDataGridViewTextBoxColumn1,
+            this.clientIDDataGridViewTextBoxColumn1,
+            this.loanAmountDataGridViewTextBoxColumn,
+            this.interestDataGridViewTextBoxColumn,
+            this.noOfPaymentsDataGridViewTextBoxColumn,
+            this.paymentTermDataGridViewTextBoxColumn,
+            this.deductionDataGridViewTextBoxColumn,
+            this.interestedAmountDataGridViewTextBoxColumn,
+            this.receivableAmountDataGridViewTextBoxColumn,
+            this.totalPayableDataGridViewTextBoxColumn,
+            this.dueDateDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn1});
+            this.ListOfLoanTable.DataSource = this.loanBindingSource;
+            this.ListOfLoanTable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ListOfLoanTable.Location = new System.Drawing.Point(8, 8);
+            this.ListOfLoanTable.Name = "ListOfLoanTable";
+            this.ListOfLoanTable.ReadOnly = true;
+            this.ListOfLoanTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ListOfLoanTable.Size = new System.Drawing.Size(474, 246);
+            this.ListOfLoanTable.TabIndex = 0;
+            this.ListOfLoanTable.SelectionChanged += new System.EventHandler(this.ListofScheduleTable_SelectionChanged);
+            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            dataGridViewCellStyle1.Format = "MM-dd-yyyy";
+            dataGridViewCellStyle1.NullValue = null;
+            this.iDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
@@ -212,44 +259,6 @@
             // scheduleBindingSource
             // 
             this.scheduleBindingSource.DataSource = typeof(Hulom_ClientLoan_System.Entities.Schedule);
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(8, 254);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(474, 22);
-            this.panel3.TabIndex = 2;
-            // 
-            // ListOfLoanTable
-            // 
-            this.ListOfLoanTable.AllowUserToAddRows = false;
-            this.ListOfLoanTable.AllowUserToDeleteRows = false;
-            this.ListOfLoanTable.AutoGenerateColumns = false;
-            this.ListOfLoanTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.ListOfLoanTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListOfLoanTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.loanIDDataGridViewTextBoxColumn1,
-            this.clientIDDataGridViewTextBoxColumn1,
-            this.loanAmountDataGridViewTextBoxColumn,
-            this.interestDataGridViewTextBoxColumn,
-            this.noOfPaymentsDataGridViewTextBoxColumn,
-            this.paymentTermDataGridViewTextBoxColumn,
-            this.deductionDataGridViewTextBoxColumn,
-            this.interestedAmountDataGridViewTextBoxColumn,
-            this.receivableAmountDataGridViewTextBoxColumn,
-            this.totalPayableDataGridViewTextBoxColumn,
-            this.dueDateDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn1});
-            this.ListOfLoanTable.DataSource = this.loanBindingSource;
-            this.ListOfLoanTable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ListOfLoanTable.Location = new System.Drawing.Point(8, 8);
-            this.ListOfLoanTable.Name = "ListOfLoanTable";
-            this.ListOfLoanTable.ReadOnly = true;
-            this.ListOfLoanTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ListOfLoanTable.Size = new System.Drawing.Size(474, 246);
-            this.ListOfLoanTable.TabIndex = 0;
-            this.ListOfLoanTable.SelectionChanged += new System.EventHandler(this.ListofScheduleTable_SelectionChanged);
             // 
             // loanIDDataGridViewTextBoxColumn1
             // 
@@ -330,6 +339,9 @@
             // dueDateDataGridViewTextBoxColumn
             // 
             this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
+            dataGridViewCellStyle2.Format = "MM-dd-yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dueDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.dueDateDataGridViewTextBoxColumn.HeaderText = "DueDate";
             this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
             this.dueDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -361,8 +373,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ListOfLoanSchedTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListOfLoanTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -381,6 +393,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView ListOfLoanSchedTable;
         private System.Windows.Forms.BindingSource scheduleBindingSource;
+        private System.Windows.Forms.BindingSource loanBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loanIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
@@ -399,6 +412,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPayableDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.BindingSource loanBindingSource;
     }
 }

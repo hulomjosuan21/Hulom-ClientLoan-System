@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ClientIDLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ScheduleTable = new System.Windows.Forms.DataGridView();
@@ -126,9 +126,9 @@
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            dataGridViewCellStyle1.Format = "MM-dd-yyyy";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "MM-dd-yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -136,9 +136,9 @@
             // statusDataGridViewTextBoxColumn
             // 
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
