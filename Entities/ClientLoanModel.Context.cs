@@ -25,8 +25,8 @@ namespace Hulom_ClientLoan_System.Entities
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Loan> Loans { get; set; }
         public virtual DbSet<Schedule> Schedules { get; set; }
+        public virtual DbSet<Client> Clients { get; set; }
     }
 }

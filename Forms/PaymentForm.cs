@@ -78,6 +78,8 @@ namespace Hulom_ClientLoan_System.Forms
             {
                 Schedule currentSched = _con.Schedules.FirstOrDefault(id => id.ID == getSelectedSchedID);
                 Loan currentLoan = _con.Loans.FirstOrDefault(id => id.LoanID == getSelectedLoanID);
+                int OldNumLoan = _con.Loans.Where(id => id.ClientID == getSelectedCurrentClientID && id.Status == ListOfLoanStatus.Ongoing.ToString()).Count();
+                
 
                 if (currentLoan.TotalPayable > 0)
                 {
@@ -120,6 +122,16 @@ namespace Hulom_ClientLoan_System.Forms
 
                             List<Schedule> schedules = _con.Schedules.Where(s => s.LoanID == getSelectedLoanID).ToList();
                             List<Loan> loans = _con.Loans.Where(id => id.ClientID == getSelectedCurrentClientID).ToList();
+
+                            int newNumLoan = _con.Loans.Where(id => id.ClientID == getSelectedCurrentClientID && id.Status == ListOfLoanStatus.Ongoing.ToString()).Count();
+
+                            if (OldNumLoan != newNumLoan)
+                            {
+                                Client loanCount = _con.Clients.FirstOrDefault(id => id.ID == getSelectedCurrentClientID);
+                                loanCount.ActiveLoan = newNumLoan;
+                                _con.SaveChanges();
+                            }
+
                             if (schedules != null)
                             {
                                 scheduleBindingSource.DataSource = schedules;

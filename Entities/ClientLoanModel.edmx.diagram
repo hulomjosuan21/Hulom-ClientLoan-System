@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d63660c017d94341938f55fb09cdafd5" Name="Diagram1">
-        <EntityTypeShape EntityType="hulomclientloandbModel.Client" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="hulomclientloandbModel.Loan" Width="1.5" PointX="3.75" PointY="0.75" />
         <EntityTypeShape EntityType="hulomclientloandbModel.Schedule" Width="1.5" PointX="6" PointY="1.375" />
+        <EntityTypeShape EntityType="hulomclientloandbModel.Client" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

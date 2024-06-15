@@ -47,7 +47,6 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
             AddressInput.Text = getClient.Address;
             EmailInput.Text = getClient.Email;
             ContactNumInput.Text = getClient.PhoneNumber;
-            GetCurrentClientSavingAndNumLoan._Savings = getClient.Savings;
             GetCurrentClientSavingAndNumLoan._NumLoans = getClient.ActiveLoan;
             this.getSelectedClientID = getSelectedClientID;
             Button.Click += new EventHandler(EditButton_Click);
@@ -106,7 +105,6 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
             GetAddedOrEditedClient.Address = address;
             GetAddedOrEditedClient.Email = email;
             GetAddedOrEditedClient.PhoneNumber = num;
-            GetAddedOrEditedClient.Savings = 0;
             GetAddedOrEditedClient.ActiveLoan = 0;
 
             DialogResult = DialogResult.OK;
@@ -159,7 +157,6 @@ namespace Hulom_ClientLoan_System.Forms.PopUpForms
             GetAddedOrEditedClient.Address = address;
             GetAddedOrEditedClient.Email = email;
             GetAddedOrEditedClient.PhoneNumber = num;
-            GetAddedOrEditedClient.Savings = GetCurrentClientSavingAndNumLoan._Savings;
             GetAddedOrEditedClient.ActiveLoan = GetCurrentClientSavingAndNumLoan._NumLoans;
             DialogResult = DialogResult.OK;
             Dispose();

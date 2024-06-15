@@ -55,7 +55,6 @@ namespace Hulom_ClientLoan_System.Forms
                         c.Gender = ae.GetAddedOrEditedClient.Gender;
                         c.PhoneNumber = ae.GetAddedOrEditedClient.PhoneNumber;
                         c.Email = ae.GetAddedOrEditedClient.Email;
-                        c.Savings = ae.GetAddedOrEditedClient.Savings;
                         c.ActiveLoan = ae.GetAddedOrEditedClient.ActiveLoan;
                         _con.SaveChanges();
                     }
@@ -169,7 +168,6 @@ namespace Hulom_ClientLoan_System.Forms
                             c.Gender,
                             c.PhoneNumber,
                             c.Email,
-                            c.Savings,
                             c.ActiveLoan
                         })
                         .ToList();
